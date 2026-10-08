@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: web_react_glasses_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: b2b_db
+    ports:
+      - "5445:5432"
+    volumes:
+      - postgres_b2b_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_b2b_data:
