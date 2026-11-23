@@ -64,20 +64,31 @@ El proyecto está diseñado para levantarse con un solo comando gracias a la mag
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/tu-usuario/web_react_glasses.git
-cd web_react_glasses
+git clone https://github.com/Pandxk/System-Api-Rest.git
+cd System-Api-Rest
 
-# 2. Levantar la infraestructura
+# 2. Configurar variables de entorno
+cp .env.example .env
+
+# 3. Levantar la infraestructura (PostgreSQL)
 docker-compose up -d
 
-# 3. Lanzar la Base de Datos (Opcional, en caso de estar limpia)
+# 4. Lanzar la Base de Datos (Opcional, en caso de estar limpia)
 cd backend
+pip install -r requirements.txt
 python seed.py
+cd ..
 
-# 4. Lanzar Frontend y Backend
+# 5. Lanzar Frontend y Backend
 npm install
 npm run dev
 ```
 > **Endpoints disponibles:**  
 > Frontend: `http://localhost:8080/`  
 > Backend API Swagger: `http://localhost:8001/docs`
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia **MIT**. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
